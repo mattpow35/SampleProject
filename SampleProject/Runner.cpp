@@ -1,15 +1,16 @@
 //
-//  main.cpp
+//  Runner.cpp
 //  SampleProject
 //
 //  Created by Powley, Matthew on 1/27/17.
 //  Copyright © 2017 Powley, Matthew. All rights reserved.
 //
 
-#include <iostream>
+#include "controller.h"
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main()
+{
+    Controller * app = new Controller();
+    app->start();
     return 0;
 }
