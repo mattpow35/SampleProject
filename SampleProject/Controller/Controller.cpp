@@ -7,14 +7,19 @@
 //
 
 #include <iostream>
+#include "../Model/Timer.hpp"
 #include "controller.h"
+
 
 using namespace std;
 
 void Controller :: start()
 {
-    int originalNumber = 0;
+    Timer sillyTime;
+    sillyTime.startTimer();
     
+    int originalNumber = 0;
+
     int * numberPointer = &originalNumber;
     
     cout << "type a number here: ";
@@ -27,7 +32,13 @@ void Controller :: start()
 
     changeWithPointer(numberPointer);
     cout << "changed? " << originalNumber << endl;
-
+    
+    sillyTime.stopTimer();
+    sillyTime.displayTimerInformation();
+    
+    sillyTime.resetTimer();
+    cout << sillyTime.getExecutionTimeInMicroseconds() << endl;
+   
 }
 
 void Controller :: tryNumbers(int sent)
